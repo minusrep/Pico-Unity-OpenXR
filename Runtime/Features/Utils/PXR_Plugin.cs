@@ -247,9 +247,5 @@ namespace Unity.XR.PXR
         ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED_KHR = ERROR_EXTENSION_DEPENDENCY_NOT_ENABLED,
         ERROR_PERMISSION_INSUFFICIENT_KHR = ERROR_PERMISSION_INSUFFICIENT,
     }
-    public enum HandTrackingSupport
-    {
-        ControllersAndHands,
-        HandsOnly
-    }
+
 }

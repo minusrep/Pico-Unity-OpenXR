@@ -22,11 +22,7 @@ namespace Unity.XR.OpenXR.Features.PICOSupport
         private void OnEnable()
         {
 #if UNITY_2019_1_OR_NEWER
-#if UNITY_6000
-            if (GraphicsSettings.defaultRenderPipeline != null)
-#else
             if (GraphicsSettings.renderPipelineAsset != null)
-#endif
             {
                 RenderPipelineManager.beginFrameRendering += BeginRendering;
                 RenderPipelineManager.endFrameRendering += EndRendering;
@@ -42,11 +38,7 @@ namespace Unity.XR.OpenXR.Features.PICOSupport
         private void OnDisable()
         {
 #if UNITY_2019_1_OR_NEWER
-#if UNITY_6000
-            if (GraphicsSettings.defaultRenderPipeline != null)
-#else
             if (GraphicsSettings.renderPipelineAsset != null)
-#endif
             {
                 RenderPipelineManager.beginFrameRendering -= BeginRendering;
                 RenderPipelineManager.endFrameRendering -= EndRendering;

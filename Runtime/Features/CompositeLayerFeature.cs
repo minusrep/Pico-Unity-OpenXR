@@ -16,7 +16,6 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
-using UnityEngine.XR;
 
 namespace Unity.XR.OpenXR.Features.PICOSupport
 {
@@ -203,7 +202,6 @@ namespace Unity.XR.OpenXR.Features.PICOSupport
             overlayParam.layerType = overlayType;
             overlayParam.width = (uint)layerTextures[1].width;
             overlayParam.height = (uint)layerTextures[1].height;
-            
             overlayParam.arraySize = 1;
             overlayParam.mipmapCount = 1;
             overlayParam.sampleCount = 1;
@@ -215,7 +213,7 @@ namespace Unity.XR.OpenXR.Features.PICOSupport
                 if (cubeM == null)
                     cubeM = new Material(Shader.Find("PXR_SDK/PXR_CubemapBlit"));
             }
-            
+
             if (GraphicsDeviceType.Vulkan == SystemInfo.graphicsDeviceType)
             {
                 overlayParam.format = QualitySettings.activeColorSpace == ColorSpace.Linear ? (UInt64)ColorForamt.VK_FORMAT_R8G8B8A8_SRGB : (UInt64)RenderTextureFormat.Default;

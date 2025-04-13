@@ -6,7 +6,7 @@ using Unity.XR.CoreUtils;
 using Unity.XR.PXR;
 using UnityEditor;
 using UnityEngine;
-#if AR_FOUNDATION_5||AR_FOUNDATION_6
+#if AR_FOUNDATION
 using UnityEngine.XR.ARSubsystems;
 #endif
 using UnityEngine.XR.OpenXR;
@@ -55,8 +55,8 @@ namespace Unity.XR.OpenXR.Features.PICOSupport
             base.OnSessionExiting(xrSession);
         }
         
-#if AR_FOUNDATION_5||AR_FOUNDATION_6
-        public  bool isAnchorSubsystem=false;
+#if AR_FOUNDATION
+        public  bool isAnchorSubsystem=true;
         static List<XRAnchorSubsystemDescriptor> anchorSubsystemDescriptors = new List<XRAnchorSubsystemDescriptor>();
         protected override void OnSubsystemCreate()
         {

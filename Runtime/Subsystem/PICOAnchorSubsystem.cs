@@ -1,4 +1,4 @@
-#if AR_FOUNDATION_5||AR_FOUNDATION_6
+#if AR_FOUNDATION
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -158,12 +158,7 @@ namespace Unity.XR.PXR
                 subsystemTypeOverride = typeof(PICOAnchorSubsystem),
                 supportsTrackableAttachments = false
             };
-     
-#if AR_FOUNDATION_6
-            XRAnchorSubsystemDescriptor.Register(cInfo);
-#elif AR_FOUNDATION_5
             XRAnchorSubsystemDescriptor.Create(cInfo);
-#endif
         }
     }
 }

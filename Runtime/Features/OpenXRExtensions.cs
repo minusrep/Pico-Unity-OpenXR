@@ -6,7 +6,7 @@ using Unity.XR.PXR;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.XR;
-#if AR_FOUNDATION_5||AR_FOUNDATION_6
+#if AR_FOUNDATION
 using UnityEngine.XR.ARSubsystems;
 #endif
 using UnityEngine.XR.OpenXR.Features;
@@ -315,8 +315,8 @@ namespace Unity.XR.OpenXR.Features.PICOSupport
                 SpatialMeshDataUpdated?.Invoke(meshInfos);
             }
         }
-#if AR_FOUNDATION_5||AR_FOUNDATION_6
-        public  bool isSessionSubsystem=false;
+#if AR_FOUNDATION
+        public  bool isSessionSubsystem=true;
         private static List<XRSessionSubsystemDescriptor> sessionSubsystemDescriptors = new List<XRSessionSubsystemDescriptor>();
         protected override void OnSubsystemCreate()
         {
